@@ -1,13 +1,338 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap');
+
+* {
+  box-sizing: border-box;
+  text-align: center;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+*:focus {
+  outline:none;
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+}
+
+.prices-info {
+  width: 100%;
+}
+
+
+#signup-login {
+  width: 40%;
+  float: left;
+  margin: 20px;
+  vertical-align: top;
+  position: relative;
+}
+
+.signup-login-button {
+  background-color: darkred;
+  border-radius: 5px;
+  border: none;
+  color: white;
+  padding: 5px;
+  width: 100%;
+  cursor: pointer;
+}
+
+.signup-login-label {
+  text-align: left;
+  display: block;
+}
+
+.signup-login-field {
+  text-align: left;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  padding: 5px;
+  width: 100%;
+}
+
+.navbutton {
+  color: lightgray;
+  text-decoration: none;
+  margin: 10px;
+  display: block;
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 15px;
+}
+
+.navbutton-selected {
+  border: 1px solid lightgray;
+}
+
+.nav-left {
+  border: 2px solid lightgray;
+  float: left;
+  font-weight: 900;
+  border: none;
+  color: white;
+}
+
+.nav-right {
+  float: right;
+}
+
+.navbutton:hover {
+  background-color: rgb(113, 74, 204);
+}
+
+.home {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.navbar {
+  background-color: rgb(100, 65, 182);
+  overflow: hidden;
+  color: lightgray;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  /*align-items: flex-end;*/
+}
+
+#search-bar {
+  position: relative;
+  border: 2px solid rgb(100, 65, 182);
+  border-radius: 5px;
+
+  height: 40px;
+  display: flex;
+  margin-top: 40px;
+
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+  width: 30%;
+  padding: 0px;
+}
+#search-bar:hover {
+  width: 40%;
+}
+
+#search-icon {
+  align-items: stretch;
+  width: 35px;
+  height: 90%;
+  position: absolute;
+  top: 3px;
+  right: 3px;
+}
+
+#search-term {
+  border: none;
+  align-items: stretch;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 75%;
+  height: fit-content;
+  text-align: left;
+}
+#search-term:focus {
+  width: 40%;
+}
+
+h1 {
+  font-size: 50px;
+}
+h2 {
+  font-size: 40px;
+}
+h3 {
+  font-size: 30px;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+/*
+.app {
+  max-width: 1200px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 300px;
+  border: 1px solid steelblue;
+  padding: 30px;
+  border-radius: 5px;
+}
+*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.btn {
+  display: inline-block;
+  background: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 15px;
+  font-family: inherit;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
+
+.btn-block {
+  display: block;
+  width: 100%;
+}
+
+.task {
+  background: #f4f4f4;
+  margin: 5px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.task.reminder {
+  border-left: 5px solid green;
+}
+
+.task h3 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.add-form {
+  margin-bottom: 40px;
+}
+
+.form-control {
+  margin: 20px 0;
+}
+
+.form-control label {
+  display: block;
+}
+
+.form-control input {
+  width: 100%;
+  height: 40px;
+  margin: 5px;
+  padding: 3px 7px;
+  font-size: 17px;
+}
+
+.form-control-check {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-control-check label {
+  flex: 1;
+}
+
+.form-control-check input {
+  flex: 2;
+  height: 20px;
+}
+
+footer {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.closed-market  {
+  background-color: rgb(211, 131, 131);
+}
+
+.open-market  {
+  background-color: lightgreen;
+}
+
+.stock-header {
+  float: left;
+}
+
+.stock-numbers-header {
+  float: right;
+}
+
+.lower-section {
+  clear: both;
+}
+
+.prices-info-section {
+  margin: 10px;
+  display: inline-block;
+  /*textalign left would make all the blocks within this div hug the left*/
+  width: 300px;
+  height: 60px;
+  margin-left: 3px;
+}
+
+.portfolio-info-section {
+  position: relative;
+  font-weight: bold;
+  margin-left: 10px;
+  display: inline-block;
+  width: 47%;
+}
+
+.favorites-box {
+  display: inline-block;
+  position: relative;
+  /*textalign left would make all the blocks within this div hug the left*/
+  width: 100%;
+  margin: 10px;
+  height: 60px;
+  border: 1px solid gray;
+  padding: 5px;
+  padding-right: 20px;
+}
+
+.favorites-x {
+  width: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+#favorites-container {
+  margin: auto;
+  width: 80%;
+}
+
+#portfolio-container {
+  margin: auto;
+  width: 80%;
+}
+
+.portfolio-box {
+  display: inline-block;
+  background-color: rgb(240, 232, 232);
+  font-size: 12px;
+  /*textalign left would make all the blocks within this div hug the left*/
+  width: 100%;
+  margin: 10px;
+  border: 1px solid lightgray;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
